@@ -1,12 +1,18 @@
 const express = require('express');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const { orWhereNotExists } = require('./data/dbConfig');
 const logger = require('./middleware/logger')
 const usersRouter = require('./users/userRouter')
 
 server = express();
 server.use(express.json());
-server.use(morgan('combined'));
-// server.use(logger);
+// server.use(morgan('combined'));
+// server.use((req, res, next) => {
+//   const time = new Date().toISOString()
+//   console.log(`[${time}] ${req.method} ${req.url}`);
+//   next()
+// })
+server.use(logger)
 
 const port = 5000;
 
