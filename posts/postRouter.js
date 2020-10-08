@@ -1,9 +1,10 @@
 const express = require('express');
+const users = require('../middleware/users');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  // do your magic!
+router.get('users/:id/posts', (req, res) => {
+  users.get
 });
 
 router.get('/:id', (req, res) => {

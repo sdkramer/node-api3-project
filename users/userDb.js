@@ -6,7 +6,7 @@ module.exports = {
   getUserPosts,
   insert,
   update,
-  remove,
+  remove
 };
 
 function get() {
@@ -45,3 +45,10 @@ function remove(id) {
     .where('id', id)
     .del();
 }
+
+// function addUserPost(userId, post) {
+// 	const data = { user_id: userId, ...post }
+// 	const [id] = db("posts").insert(data)
+
+// 	return findUserPostById(userId, id)
+// }
